@@ -16,9 +16,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Apps
 PRODUCT_PACKAGES += \
     AvatarPicker \
-    Backgrounds \
-    Glimpse \
     LatinIME
+
+ifeq ($(LINEAGE_BUILD),true)
+PRODUCT_PACKAGES += \
+    Backgrounds \
+    Glimpse
+endif
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
