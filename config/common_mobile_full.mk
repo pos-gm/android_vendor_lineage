@@ -7,21 +7,25 @@ PRODUCT_SIZE := full
 $(call inherit-product-if-exists, external/google-fonts/google-sans-flex/fonts.mk)
 
 # Apps
+ifeq ($(LINEAGE_BUILD),true)
 PRODUCT_PACKAGES += \
     Camelot \
     Etar \
     Profiles \
     Recorder \
     Twelve
+endif
 
 ifneq ($(PRODUCT_NO_CAMERA),true)
 PRODUCT_PACKAGES += \
     Aperture
 endif
 
+ifeq ($(LINEAGE_BUILD),true)
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
 PRODUCT_PACKAGES += \
     AudioFX
+endif
 endif
 
 # Extra cmdline tools
