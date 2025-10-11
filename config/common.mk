@@ -274,9 +274,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.enable_transaction_tracing=false
 endif
 
-# Audio files
-$(call inherit-product, vendor/lineage/audio/audio.mk)
-
 # SetupWizard
 ifeq ($(LINEAGE_BUILD),true)
 PRODUCT_PRODUCT_PROPERTIES += \
