@@ -3,6 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+soong_namespace {
+}
+
 lineage_charger_density = select(soong_config_variable("lineage_charger", "density"), {
     any @ flag_val: flag_val,
     default: "mdpi",
