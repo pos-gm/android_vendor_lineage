@@ -77,9 +77,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 endif
 endif
 
+ifeq ($(LINEAGE_BUILD),true)
 # Lineage-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/lineage-sysconfig.xml
+endif
 
 # Lineage-specific init rc file
 PRODUCT_COPY_FILES += \
@@ -101,9 +103,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lineage-component-overrides.xml
 
+ifeq ($(LINEAGE_BUILD),true)
 # This is Lineage!
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
+endif
 
 # Enforce privapp-permissions whitelist
 PRODUCT_PRODUCT_PROPERTIES += \
