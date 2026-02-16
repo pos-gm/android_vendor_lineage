@@ -3,10 +3,6 @@ $(call inherit-product, vendor/lineage/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
 
-# Include {Lato,Rubik} fonts
-$(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
-$(call inherit-product-if-exists, external/google-fonts/rubik/fonts.mk)
-
 # Apps
 ifeq ($(LINEAGE_BUILD),true)
 PRODUCT_PACKAGES += \
@@ -36,9 +32,13 @@ PRODUCT_PACKAGES += \
 
 # Fonts
 PRODUCT_PACKAGES += \
-    fonts_customization.xml \
+    fonts_customization.xml
+
+ifeq ($(LINEAGE_BUILD),true)
+PRODUCT_PACKAGES += \
     FontLatoOverlay \
     FontRubikOverlay
+endif
 
 # Include Lineage LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries

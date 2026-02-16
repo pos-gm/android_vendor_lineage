@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     lineage_charger_animation_vendor
 endif
 
+ifeq ($(LINEAGE_BUILD),true)
 # Customizations
 PRODUCT_PACKAGES += \
     IconPackCircularAndroidOverlay \
@@ -86,6 +87,7 @@ PRODUCT_PACKAGES += \
     IconShapeTaperedRectOverlay \
     IconShapeTeardropOverlay \
     IconShapeVesselOverlay
+endif
 
 # Legal
 PRODUCT_SYSTEM_PROPERTIES += \
